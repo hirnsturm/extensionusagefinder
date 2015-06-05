@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2015-06-03T10:11:09Z" product-name="extensionusagefinder">
+		<header/>
+		<body>
+			<trans-unit id="tx_extensionusagefinder_domain_model_finder">
+				<source>Finder</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

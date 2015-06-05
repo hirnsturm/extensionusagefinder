@@ -1,0 +1,12 @@
+
+ # Module configuration
+module.tx_extensionusagefinder {
+	persistence {
+		storagePid = {$module.tx_extensionusagefinder.persistence.storagePid}
+	}
+	view {
+		templateRootPath = {$module.tx_extensionusagefinder.view.templateRootPath}
+		partialRootPath = {$module.tx_extensionusagefinder.view.partialRootPath}
+		layoutRootPath = {$module.tx_extensionusagefinder.view.layoutRootPath}
+	}
+}
