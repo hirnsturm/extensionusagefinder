@@ -1,0 +1,13 @@
+<f:form name="newFinder"
+        object="{newFinder}"
+        action="index"
+        controller="Finder" >
+    <div>
+        <f:form.select options="{extensions}" 
+                       optionLabelField="key" 
+                       optionValueField="key" 
+                       sortByOptionLabel="true"
+                       name="extensionKey" />
+        <f:form.button type="submit"><f:translate key="view.button.find" /></f:form.button>
+    </div>
+</f:form>

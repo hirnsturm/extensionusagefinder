@@ -1,0 +1,12 @@
+<table border="1">
+    <tr>
+        <th>Page</th>
+        <th>list_type</th>
+    </tr>
+    <f:for each="{entities}" as="entity">
+        <tr>
+            <td>{entity.title} ({entity.uid})</td>
+            <td>{entity.list_type}</td>
+        </tr>
+    </f:for>
+</table>

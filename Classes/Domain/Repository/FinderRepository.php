@@ -1,12 +1,14 @@
 <?php
 
-namespace Sle\Extensionusagefinder\Domain\Model;
+namespace Sle\Extensionusagefinder\Domain\Repository;
+
+use Sle\TYPO3\Extbase\Repository\BaseRepository;
 
 /* * *************************************************************
  *
  *  Copyright notice
  *
- *  (c) 2015 Steve Lenz <kontakt@steve-lenz.de>
+ *  (c) 2015 Steve Lenz <sle@xima.de>, XIMA MEDIA GmbH
  *
  *  All rights reserved
  *
@@ -28,36 +30,9 @@ namespace Sle\Extensionusagefinder\Domain\Model;
  * ************************************************************* */
 
 /**
- * Finder
+ * The repository for Finder
  */
-class Finder extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class FinderRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
 {
-    /**
-     * extensionKey
-     *
-     * @var string
-     */
-    protected $extensionKey;
-
-    /**
-     * Returns the extensionKey
-     *
-     * @return int $extensionKey
-     */
-    public function getExtensionKey()
-    {
-        return $this->extensionKey;
-    }
-
-    /**
-     * Sets the extensionKey
-     *
-     * @param int $extensionKey
-     * @return void
-     */
-    public function setExtensionKey($extensionKey)
-    {
-        $this->extensionKey = $extensionKey;
-    }
 
 }

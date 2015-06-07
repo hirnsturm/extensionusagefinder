@@ -3,6 +3,7 @@
 namespace Sle\TYPO3\Extbase\Backend;
 
 use \TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use \TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
  * Backend Action Controller
@@ -24,4 +25,18 @@ class BackendActionController extends ActionController
         $extbaseObjectManager = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
         return $extbaseObjectManager->get($className);
     }
+
+    /**
+     * Returns an array of available and installed extensions
+     *
+     * @return array
+     */
+    protected function getAvailableAndInstalledExtensions()
+    {
+        $extbaseObjectManager = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
+        $listUtility          = $extbaseObjectManager->get('TYPO3\\CMS\\Extensionmanager\\Utility\\ListUtility');
+
+        return $listUtility->getAvailableAndInstalledExtensionsWithAdditionalInformation();
+    }
+
 }

@@ -2,5 +2,15 @@
 
 <f:section name="Content">
     <h2>Extension Usage Finder</h2>
-        
+    <div>
+        <f:render partial="Finder/Filter" arguments="{newFinder: newFinder, extensions: extensions}"/>
+    </div>
+    <div>
+        <p><strong><f:translate key="view.matches"/>:</strong> {entities -> f:count()}</p>
+    </div>
+    <f:if condition="{entities}">
+        <div>
+            <f:render partial="Finder/List" arguments="{entities: entities}"/>
+        </div>
+    </f:if>
 </f:section>

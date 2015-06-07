@@ -3,6 +3,11 @@
 namespace Sle\Extensionusagefinder\Controller;
 
 use Sle\TYPO3\Extbase\Backend\BackendActionController;
+use Sle\TYPO3\Extbase\Backend\BackendSession;
+use Sle\TYPO3\Extbase\Backend\BackendUser;
+use Sle\Helper\ArrayHelper;
+use Sle\Extensionusagefinder\Domain\Model\Finder;
+use Sle\Extensionusagefinder\Domain\Repository\ContentRepository;
 
 /* * *************************************************************
  *
@@ -31,9 +36,27 @@ use Sle\TYPO3\Extbase\Backend\BackendActionController;
 
 /**
  * FinderController
+ *
+ * @package TYPO3
+ * @subpackage extensionusagefinder
+ * @author Steve Lenz <kontakt@steve-lenz.de>
  */
 class FinderController extends BackendActionController
 {
+    /**
+     * The session
+     * 
+     * @var \Sle\TYPO3\Extbase\Backend\BackendSession
+     */
+    private $session = null;
+
+    /**
+     * 
+     */
+    public function initializeAction()
+    {
+        $this->session = new BackendSession('extensionusagefinder');
+    }
 
     /**
      * action index
@@ -42,6 +65,28 @@ class FinderController extends BackendActionController
      */
     public function indexAction()
     {
-        
+        $entities = null;
+        $newFinder = new Finder();
+
+        if ($this->request->hasArgument('extensionKey')) {
+            $newFinder->setExtensionKey($this->request->getArgument('extensionKey'));
+            $contentRepo = new ContentRepository();
+            $entities = $contentRepo->findByListType($newFinder->getExtensionKey());
+        }
+
+        $extensionsArray = $this->getAvailableAndInstalledExtensions();
+        $extensions      = array();
+        $arrayHelper     = new ArrayHelper();
+
+        foreach ($extensionsArray as $key => $val) {
+            $extensions[$key] = $arrayHelper->arrayAndSubArrays2Object((array) $val);
+        }
+
+        $this->view
+            ->assign('user', BackendUser::get())
+            ->assign('extensions', $extensions)
+            ->assign('newFinder', $newFinder)
+            ->assign('entities', $entities);
     }
+
 }
