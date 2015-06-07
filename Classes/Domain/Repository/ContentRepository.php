@@ -24,7 +24,7 @@ class ContentRepository
     {
         $fields        = '*';
         $table         = 'tt_content LEFT JOIN pages ON tt_content.pid = pages.uid';
-        $where         = 'list_type LIKE "%'.$type.'%"';
+        $where         = 'list_type LIKE "%'.str_replace('_', '', $type).'%"';
         $groupBy       = '';
         $orderBy       = '';
         $limit         = '';
