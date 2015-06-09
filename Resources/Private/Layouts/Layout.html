@@ -1,4 +1,6 @@
-<f:be.container>
+<f:be.container
+    addCssFile="{f:uri.resource(path:'Css/bootstrap.min.css')}"
+    addJsFile="{f:uri.resource(path:'Js/bootstrap.min.js')}">
     <div class="typo3-fullDoc">
         <div id="typo3-docheader">
             <div class="typo3-docheader-functions"></div>
@@ -6,7 +8,7 @@
         </div>
 
         <div id="typo3-docbody">
-            <div id="typo3-inner-docbody" class="tx_viewpage">
+            <div id="typo3-inner-docbody"  class="container-fluid">
                 <f:render section="Content" />
             </div>
         </div>

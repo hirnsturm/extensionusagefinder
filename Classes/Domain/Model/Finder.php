@@ -29,6 +29,8 @@ namespace Sle\Extensionusagefinder\Domain\Model;
 
 /**
  * Finder
+ *
+ * @entity
  */
 class Finder extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {

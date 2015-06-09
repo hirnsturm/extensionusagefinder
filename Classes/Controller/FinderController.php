@@ -61,32 +61,38 @@ class FinderController extends BackendActionController
     /**
      * action index
      *
+     * @param \Sle\Extensionusagefinder\Domain\Model\Finder $newFinder
+     * @dontvalidate
      * @return void
      */
-    public function indexAction()
+    public function indexAction(Finder $newFinder = null)
     {
-        $entities = null;
-        $newFinder = new Finder();
-
-        if ($this->request->hasArgument('extensionKey')) {
-            $newFinder->setExtensionKey($this->request->getArgument('extensionKey'));
-            $contentRepo = new ContentRepository();
+        $entities  = null;
+        $newFinder = (null === $newFinder) ? new Finder() : $newFinder;
+        $contentRepo = new ContentRepository();
+        
+        if (null !== $newFinder->getExtensionKey()) {
             $entities = $contentRepo->findByListType($newFinder->getExtensionKey());
         }
+        
+        $this->view
+            ->assign('user', BackendUser::get())
+            ->assign('extensions', $this->findAllExtensions())
+            ->assign('newFinder', $newFinder)
+            ->assign('entities', $entities);
+    }
 
+    private function findAllExtensions()
+    {
         $extensionsArray = $this->getAvailableAndInstalledExtensions();
-        $extensions      = array();
         $arrayHelper     = new ArrayHelper();
+        $extensions      = array();
 
         foreach ($extensionsArray as $key => $val) {
             $extensions[$key] = $arrayHelper->arrayAndSubArrays2Object((array) $val);
         }
 
-        $this->view
-            ->assign('user', BackendUser::get())
-            ->assign('extensions', $extensions)
-            ->assign('newFinder', $newFinder)
-            ->assign('entities', $entities);
+        return $extensions;
     }
 
 }

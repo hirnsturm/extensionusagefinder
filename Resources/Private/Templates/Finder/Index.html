@@ -5,9 +5,11 @@
     <div>
         <f:render partial="Finder/Filter" arguments="{newFinder: newFinder, extensions: extensions}"/>
     </div>
-    <div>
-        <p><strong><f:translate key="view.matches"/>:</strong> {entities -> f:count()}</p>
-    </div>
+    <f:if condition="{entities}">
+        <div class="alert alert-info" role="alert">
+            <p><strong><f:translate key="view.matches"/>:</strong> {entities -> f:count()}</p>
+        </div>
+    </f:if>
     <f:if condition="{entities}">
         <div>
             <f:render partial="Finder/List" arguments="{entities: entities}"/>

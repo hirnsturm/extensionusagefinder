@@ -1,13 +1,15 @@
-<f:form name="newFinder"
+<f:form objectName="newFinder"
         object="{newFinder}"
         action="index"
-        controller="Finder" >
-    <div>
+        controller="Finder" 
+        class="form-inline">
+    <div class="form-group">
         <f:form.select options="{extensions}" 
                        optionLabelField="key" 
                        optionValueField="key" 
                        sortByOptionLabel="true"
-                       name="extensionKey" />
-        <f:form.button type="submit"><f:translate key="view.button.find" /></f:form.button>
+                       property="extensionKey" 
+                       class="form-control" />
     </div>
+    <f:form.button type="submit" class="form-control" ><f:translate key="view.button.find" /></f:form.button>
 </f:form>
