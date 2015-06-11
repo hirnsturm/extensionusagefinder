@@ -15,3 +15,4 @@ This extension is a backend modul.
 - tt_content.uid in result list
 - Table filter
 - Dependencies to third party extensions
+- Message for no matches found
