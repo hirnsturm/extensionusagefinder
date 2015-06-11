@@ -3,8 +3,9 @@
 ## Table of contents
 - What does it do?
 - Dependencies
-- Installation
-- How to use
+- User manual
+  - Installation
+  - How to use
 - Todo
 
 ## What does it do?
@@ -13,9 +14,11 @@ This extension is a backend modul.
 ## Dependencies
 TYPO3 6.2
 
-## Installation
+## User manual
 
-## How to use
+### Installation
+
+### How to use
 
 
 ## Todo
