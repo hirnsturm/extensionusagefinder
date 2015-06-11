@@ -22,6 +22,7 @@ TYPO3 6.2
 
 
 ## Todo
+- Improve search with LIKE
 - tt_content.uid in result list
 - Table filter
 - Dependencies to third party extensions
