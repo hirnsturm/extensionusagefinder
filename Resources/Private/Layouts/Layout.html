@@ -1,10 +1,23 @@
 <f:be.container
-    addCssFile="{f:uri.resource(path:'Css/bootstrap.min.css')}"
-    addJsFile="{f:uri.resource(path:'Js/bootstrap.min.js')}">
+    includeCssFiles="{0: '{f:uri.resource(path:\'vendor/twitter/bootstrap/3.3.4/css/bootstrap.min.css\')}', 
+    1: '{f:uri.resource(path:\'vendor/twitter/bootstrap/3.3.4/css/bootstrap-theme.min.css\')}'}"
+    includeJsFiles="{0: '{f:uri.resource(path:\'vendor/twitter/bootstrap/3.3.4/js/bootstrap.min.js\')}'}"
+    loadJQuery="true">
     <div class="typo3-fullDoc">
         <div id="typo3-docheader">
-            <div class="typo3-docheader-functions"></div>
-            <div class="typo3-docheader-buttons"></div>
+            <div id="typo3-docheader-row1">
+                <div class="buttonsleft">
+                    &nbsp;
+                </div>
+                <div class="buttonsright">
+                    <f:be.buttons.shortcut />
+                </div>
+            </div>
+            <div id="typo3-docheader-row2">
+                
+            </div>
+<!--            <div class="typo3-docheader-functions"></div>
+            <div class="typo3-docheader-buttons"></div>-->
         </div>
 
         <div id="typo3-docbody">
