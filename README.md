@@ -3,6 +3,7 @@
 ## Table of contents
 - What does it do?
 - Dependencies
+- Installation
 - How to use
 - Todo
 
@@ -10,7 +11,13 @@
 This extension is a backend modul.
 
 ## Dependencies
+TYPO3 6.2
+
+## Installation
+
 ## How to use
+
+
 ## Todo
 - tt_content.uid in result list
 - Table filter
