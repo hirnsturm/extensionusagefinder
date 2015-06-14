@@ -15,15 +15,17 @@ $EM_CONF[$_EXTKEY] = array(
     'category'         => 'module',
     'author'           => 'Steve Lenz',
     'author_email'     => 'kontakt@steve-lenz.de',
-    'state'            => 'alpha',
+    'state'            => 'stable',
     'internal'         => '',
     'uploadfolder'     => '0',
     'createDirs'       => '',
     'clearCacheOnLoad' => 0,
-    'version'          => '0.3.1',
+    'version'          => '1.0.0',
     'constraints'      => array(
         'depends'   => array(
-            'typo3' => '6.2',
+            'typo3' => '6.2.0-',
+            'extbase' => '6.2.0-',
+            'fluid' => '6.2.0-',
         ),
         'conflicts' => array(
         ),

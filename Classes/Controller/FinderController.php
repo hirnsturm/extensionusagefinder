@@ -4,9 +4,8 @@ namespace Sle\Extensionusagefinder\Controller;
 
 use Sle\TYPO3\Extbase\Backend\BackendActionController;
 use Sle\TYPO3\Extbase\Backend\BackendSession;
-use Sle\TYPO3\Extbase\Backend\BackendUser;
-use Sle\Helper\ArrayHelper;
-use Sle\Extensionusagefinder\Domain\Model\Finder;
+use Sle\TYPO3\Extbase\Extensionmanager\ExtensionsUtility;
+use Sle\Extensionusagefinder\Domain\Model\FinderQuery;
 use Sle\Extensionusagefinder\Domain\Repository\ContentRepository;
 
 /* * *************************************************************
@@ -61,38 +60,35 @@ class FinderController extends BackendActionController
     /**
      * action index
      *
-     * @param \Sle\Extensionusagefinder\Domain\Model\Finder $newFinder
+     * @param \Sle\Extensionusagefinder\Domain\Model\FinderQuery $newFinder
      * @dontvalidate
      * @return void
      */
-    public function indexAction(Finder $newFinder = null)
+    public function indexAction(FinderQuery $newFinder = null)
     {
-        $entities  = null;
-        $newFinder = (null === $newFinder) ? new Finder() : $newFinder;
+        $entities    = null;
+        $extUtility  = new ExtensionsUtility();
         $contentRepo = new ContentRepository();
-        
+
+        if (null === $newFinder) {
+            $newFinder = ($this->session->has('FinderQuery')) ? $this->session->get('FinderQuery')
+                    : new FinderQuery();
+        }
+
         if (null !== $newFinder->getExtensionKey()) {
             $entities = $contentRepo->findByListType($newFinder->getExtensionKey());
         }
-        
+
+        $this->session->set('FinderQuery', $newFinder);
+
         $this->view
-            ->assign('user', BackendUser::get())
-            ->assign('extensions', $this->findAllExtensions())
+            ->assign('extensions', $extUtility->getAllExtensions(true))
+            ->assign('extInfo',
+                $extUtility->getExtensionInfo($newFinder->getExtensionKey()))
+            ->assign('extDependencies',
+                $extUtility->getDependencies($newFinder->getExtensionKey()))
             ->assign('newFinder', $newFinder)
             ->assign('entities', $entities);
-    }
-
-    private function findAllExtensions()
-    {
-        $extensionsArray = $this->getAvailableAndInstalledExtensions();
-        $arrayHelper     = new ArrayHelper();
-        $extensions      = array();
-
-        foreach ($extensionsArray as $key => $val) {
-            $extensions[$key] = $arrayHelper->arrayAndSubArrays2Object((array) $val);
-        }
-
-        return $extensions;
     }
 
 }

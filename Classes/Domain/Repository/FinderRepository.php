@@ -32,7 +32,7 @@ use Sle\TYPO3\Extbase\Repository\BaseRepository;
 /**
  * The repository for Finder
  */
-class FinderRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class FinderRepository extends BaseRepository
 {
 
 }

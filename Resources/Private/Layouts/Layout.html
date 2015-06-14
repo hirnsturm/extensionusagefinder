@@ -1,23 +1,25 @@
 <f:be.container
-    includeCssFiles="{0: '{f:uri.resource(path:\'vendor/twitter/bootstrap/3.3.4/css/bootstrap.min.css\')}', 
-    1: '{f:uri.resource(path:\'vendor/twitter/bootstrap/3.3.4/css/bootstrap-theme.min.css\')}'}"
+    includeCssFiles="{0: '{f:uri.resource(path:\'vendor/twitter/bootstrap/3.3.4/css/bootstrap.min.css\')}'}"
     includeJsFiles="{0: '{f:uri.resource(path:\'vendor/twitter/bootstrap/3.3.4/js/bootstrap.min.js\')}'}"
     loadJQuery="true">
     <div class="typo3-fullDoc">
         <div id="typo3-docheader">
             <div id="typo3-docheader-row1">
                 <div class="buttonsleft">
-                    &nbsp;
+                    <span style="color:#FFF"></span>
                 </div>
                 <div class="buttonsright">
-                    <f:be.buttons.shortcut />
                 </div>
             </div>
             <div id="typo3-docheader-row2">
-                
+                <div class="docheader-row2-left">
+                    <f:translate key="view.header.name"/>
+                </div>
+                <div class="docheader-row2-right">
+                    <f:be.pagePath/>
+                    <f:be.pageInfo/>
+                </div>
             </div>
-<!--            <div class="typo3-docheader-functions"></div>
-            <div class="typo3-docheader-buttons"></div>-->
         </div>
 
         <div id="typo3-docbody">
@@ -25,5 +27,6 @@
                 <f:render section="Content" />
             </div>
         </div>
+        
     </div>
 </f:be.container>

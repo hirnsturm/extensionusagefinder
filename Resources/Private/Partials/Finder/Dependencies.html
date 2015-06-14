@@ -1,0 +1,9 @@
+<div class="row">
+    <f:if condition="{extDependencies}">
+        <ul>
+            <f:for each="{extDependencies}" as="val" key="key">
+                <li>{val.title} ({key})</li>
+            </f:for>
+        </ul>
+    </f:if>
+</div>

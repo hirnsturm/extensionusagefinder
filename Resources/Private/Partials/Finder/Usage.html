@@ -1,0 +1,35 @@
+<div class='container-fluid'>
+    <div class="row">
+        <div class="alert alert-info" role="alert">
+            <p><strong><f:translate key="view.finder.index.matches" />:</strong> {entities -> f:count()}</p>
+        </div>
+    </div>
+    <f:if condition="{entities}">
+        <div class="row">
+            <table class="table table-striped table-responsive">
+                <thead>
+                    <tr>
+                        <th>UID</th>
+                        <th>Page [Page UID]</th>
+                        <th>list_type</th>
+                        <th>colPos</th>
+                        <th>Element deleted</th>
+                        <th>Page deleted</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <f:for each="{entities}" as="entity">
+                    <tr>
+                        <td>{entity.contentUid}</td>
+                        <td>{entity.pageTitle} [{entity.pagesUid}]</td>
+                        <td>{entity.list_type}</td>
+                        <td>{entity.colPos}</td>
+                        <td>{entity.contentDeleted}</td>
+                        <td>{entity.pagesDeleted}</td>
+                    </tr>
+                </f:for>
+                </tbody>    
+            </table>
+        </div>
+    </f:if>
+</div>

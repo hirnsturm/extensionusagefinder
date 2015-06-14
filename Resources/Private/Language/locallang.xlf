@@ -11,9 +11,23 @@
                 <source>Find</source>
             </trans-unit>
             
-            <trans-unit id="view.matches">
+            <trans-unit id="view.header.name">
+                <source>Extension Usage Finder</source>
+            </trans-unit>
+            
+            <trans-unit id="view.finder.index.matches">
                 <source>Matches</source>
             </trans-unit>
+            <trans-unit id="view.finder.index.tabs.usage">
+                <source>Usage</source>
+            </trans-unit>
+            <trans-unit id="view.finder.index.tabs.dependencies">
+                <source>Dependencies</source>
+            </trans-unit>
+            <trans-unit id="view.finder.index.tabs.extensionInfo">
+                <source>Extension info</source>
+            </trans-unit>
+            
         </body>
     </file>
 </xliff>

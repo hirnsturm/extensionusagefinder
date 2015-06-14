@@ -11,8 +11,21 @@
                 <target>Finden</target>
             </trans-unit>
             
-            <trans-unit id="view.matches">
+            <trans-unit id="view.header.name">
+                <target>Extension Usage Finder</target>
+            </trans-unit>
+            
+            <trans-unit id="view.finder.index.matches">
                 <target>Treffer</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.tabs.usage">
+                <target>Verwendung</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.tabs.dependencies">
+                <target>Abhängigkeiten</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.tabs.extensionInfo">
+                <target>Extension-Info</target>
             </trans-unit>
         </body>
     </file>

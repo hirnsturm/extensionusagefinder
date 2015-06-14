@@ -16,9 +16,10 @@ if (TYPO3_MODE === 'BE') {
         'Finder' => 'index',
         ),
         array(
-        'access' => 'user,group',
-        'icon'   => 'EXT:'.$_EXTKEY.'/ext_icon.gif',
-        'labels' => 'LLL:EXT:'.$_EXTKEY.'/Resources/Private/Language/locallang_extensionfinder.xlf',
+        'access'         => 'user,group',
+        'icon'           => 'EXT:'.$_EXTKEY.'/ext_icon.gif',
+        'labels'         => 'LLL:EXT:'.$_EXTKEY.'/Resources/Private/Language/locallang_extensionfinder.xlf',
+        'navFrameScript' => 'alt_db_navframe.php' // Seitenbaum aktivieren
         )
     );
 }
@@ -31,14 +32,14 @@ if (TYPO3_MODE === 'BE') {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_extensionusagefinder_domain_model_finder');
 $GLOBALS['TCA']['tx_extensionusagefinder_domain_model_finder'] = array(
     'ctrl' => array(
-        'title'         => 'LLL:EXT:extensionusagefinder/Resources/Private/Language/locallang_db.xlf:tx_extensionusagefinder_domain_model_finder',
-        'label'         => 'uid',
-        'tstamp'        => 'tstamp',
-        'crdate'        => 'crdate',
-        'cruser_id'     => 'cruser_id',
-        'dividers2tabs' => TRUE,
-        'versioningWS'           => 2,
-        'versioning_followPages' => TRUE,
+        'title'                    => 'LLL:EXT:extensionusagefinder/Resources/Private/Language/locallang_db.xlf:tx_extensionusagefinder_domain_model_finder',
+        'label'                    => 'uid',
+        'tstamp'                   => 'tstamp',
+        'crdate'                   => 'crdate',
+        'cruser_id'                => 'cruser_id',
+        'dividers2tabs'            => TRUE,
+        'versioningWS'             => 2,
+        'versioning_followPages'   => TRUE,
         'languageField'            => 'sys_language_uid',
         'transOrigPointerField'    => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',

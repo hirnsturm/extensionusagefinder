@@ -23,17 +23,15 @@ class ContentRepository
     public function findByListType($type)
     {
         $select        = 'tt_content.uid contentUid, pages.uid AS pagesUid, '
-            . 'pages.title AS pageTitle , list_type, colPos, pages.deleted AS pagesDeleted, '
-            . 'tt_content.deleted AS contentDeleted';
+            .'pages.title AS pageTitle , list_type, colPos, pages.deleted AS pagesDeleted, '
+            .'tt_content.deleted AS contentDeleted';
         $table         = 'tt_content LEFT JOIN pages ON tt_content.pid = pages.uid';
         $where         = 'list_type LIKE "%'.str_replace('_', '', $type).'%"';
         $groupBy       = '';
         $orderBy       = '';
         $limit         = '';
         $uidIndexField = '';
-
-
-
+        
         return $GLOBALS['TYPO3_DB']->exec_SELECTgetRows($select, $table, $where,
                 $groupBy, $orderBy, $limit, $uidIndexField);
     }

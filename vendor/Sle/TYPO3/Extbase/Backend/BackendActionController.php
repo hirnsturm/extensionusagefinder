@@ -26,17 +26,4 @@ class BackendActionController extends ActionController
         return $extbaseObjectManager->get($className);
     }
 
-    /**
-     * Returns an array of available and installed extensions
-     *
-     * @return array
-     */
-    protected function getAvailableAndInstalledExtensions()
-    {
-        $extbaseObjectManager = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $listUtility          = $extbaseObjectManager->get('TYPO3\\CMS\\Extensionmanager\\Utility\\ListUtility');
-
-        return $listUtility->getAvailableAndInstalledExtensionsWithAdditionalInformation();
-    }
-
 }

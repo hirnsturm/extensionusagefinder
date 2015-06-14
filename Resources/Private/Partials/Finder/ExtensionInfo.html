@@ -1,0 +1,39 @@
+<div class='row'>
+    <table class="table table-striped table-responsive">
+        <tr>
+            <th>Title:</th>
+            <td>{extInfo.title}</td>
+        </tr>
+        <tr>
+            <th>Description:</th>
+            <td>{extInfo.description}</td>
+        </tr>
+        <tr>
+            <th>Category:</th>
+            <td>{extInfo.category}</td>
+        </tr>
+        <tr>
+            <th>Author:</th>
+            <td>{extInfo.author}</td>
+        </tr>
+        <tr>
+            <th>Author E-Mail:</th>
+            <td>{extInfo.author_email}</td>
+        </tr>
+        <tr>
+            <th>Version:</th>
+            <td>{extInfo.version} ({extInfo.state})</td>
+        </tr>
+        <tr>
+            <th>Constaints:</th>
+            <td>
+                <div><strong>Depends</strong></div>
+                <ul>
+                    <f:for each="{extInfo.constraints.depends}" as="value" key="key">
+                        <li>{key} ({value})</li>
+                    </f:for>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
