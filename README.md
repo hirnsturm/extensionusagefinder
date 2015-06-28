@@ -9,7 +9,8 @@
 - Todo
 
 ## What does it do?
-This extension is a backend modul for searching usages of extensions.
+This extension offers a backend module that helps you to find the usage of an   
+extension in your TYPO3 project.
 
 ## Dependencies
 TYPO3 6.2
