@@ -2,39 +2,37 @@
 
 <f:section name="Content">
     <div class="row">
-        <f:render partial="Finder/Filter" arguments="{newFinder: newFinder, extensions: extensions}"/>
+        <div class="col-lg-12">
+            <f:render partial="Finder/Filter" arguments="{newFinder: newFinder, extensions: extensions}"/>
+        </div>
     </div>
-    
     <f:if condition="{newFinder.extensionKey}">
         <div class="row">
             <div class="col-lg-12">
-                <div role="tabpanel">
-                    <ul class="nav nav-tabs" role="tablist" id="extensionusagefinderTab">
-                        <li role="presentation" class="active">
-                            <a href="#usage" role="tab" data-toggle="tab"><f:translate key="view.finder.index.tabs.usage" /> ({entities -> f:count()})</a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#dependencies" role="tab" data-toggle="tab"><f:translate key="view.finder.index.tabs.dependencies" /> ({extDependencies -> f:count()})</a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#extension-info" role="tab" data-toggle="tab"><f:translate key="view.finder.index.tabs.extensionInfo" /></a>
-                        </li>
-                    </ul>
+                <ul class="nav nav-tabs" role="tablist" id="extensionusagefinderTab">
+                    <li role="presentation" class="active">
+                        <a href="#usage" role="tab" data-toggle="tab"><f:translate key="view.finder.index.tabs.usage" /> ({entities -> f:count()})</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#dependencies" role="tab" data-toggle="tab"><f:translate key="view.finder.index.tabs.dependencies" /> ({extDependencies -> f:count()})</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#extension-info" role="tab" data-toggle="tab"><f:translate key="view.finder.index.tabs.extensionInfo" /></a>
+                    </li>
+                </ul>
 
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade in active" id="usage">
-                            <f:render partial="Finder/Usage" arguments="{entities: entities}" />
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade" id="dependencies">
-                            <f:render partial="Finder/Dependencies" arguments="{extDependencies: extDependencies}" />
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade" id="extension-info">
-                            <f:render partial="Finder/ExtensionInfo" arguments="{extInfo: extInfo}" />
-                        </div>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="usage">
+                        <f:render partial="Finder/Usage" arguments="{entities: entities}" />
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="dependencies">
+                        <f:render partial="Finder/Dependencies" arguments="{extDependencies: extDependencies}" />
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="extension-info">
+                        <f:render partial="Finder/ExtensionInfo" arguments="{extInfo: extInfo}" />
                     </div>
                 </div>
             </div>
         </div>
-
     </f:if>
 </f:section>

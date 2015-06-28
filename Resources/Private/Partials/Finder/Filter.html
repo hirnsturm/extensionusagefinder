@@ -11,5 +11,12 @@
                        property="extensionKey" 
                        class="form-control" />
     </div>
-    <f:form.button type="submit" class="form-control" ><f:translate key="view.button.find" /></f:form.button>
+    <div class="checkbox-inline">
+        <label>
+            <f:form.checkbox property="deleted" 
+                             value="1" /><f:translate key="view.form.showDeleted" />
+        </label>
+    </div>
+    <f:form.button type="submit" 
+                   class="form-control btn btn-primary" ><f:translate key="view.button.find" /></f:form.button>
 </f:form>

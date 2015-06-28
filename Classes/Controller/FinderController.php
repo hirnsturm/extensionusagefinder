@@ -76,7 +76,7 @@ class FinderController extends BackendActionController
         }
 
         if (null !== $newFinder->getExtensionKey()) {
-            $entities = $contentRepo->findByListType($newFinder->getExtensionKey());
+            $entities = $contentRepo->findByListType($newFinder->getExtensionKey(), $newFinder->getDeleted());
         }
 
         $this->session->set('FinderQuery', $newFinder);

@@ -38,13 +38,22 @@ class FinderQuery extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
      * extensionKey
      *
      * @var string
+     * @validate Text
      */
     protected $extensionKey;
 
     /**
+     * deleted
+     *
+     * @var string
+     * @validate Boolean
+     */
+    protected $deleted = true;
+
+    /**
      * Returns the extensionKey
      *
-     * @return int $extensionKey
+     * @return string $extensionKey
      */
     public function getExtensionKey()
     {
@@ -54,12 +63,33 @@ class FinderQuery extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
     /**
      * Sets the extensionKey
      *
-     * @param int $extensionKey
+     * @param string $extensionKey
      * @return void
      */
     public function setExtensionKey($extensionKey)
     {
         $this->extensionKey = $extensionKey;
+    }
+
+    /**
+     * Returns the deleted
+     *
+     * @return boolean $deleted
+     */
+    public function getDeleted()
+    {
+        return $this->deleted;
+    }
+
+    /**
+     * Sets the deleted
+     *
+     * @param boolean $deleted
+     * @return void
+     */
+    public function setDeleted($deleted)
+    {
+        $this->deleted = $deleted;
     }
 
 }

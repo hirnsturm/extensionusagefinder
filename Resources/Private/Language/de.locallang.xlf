@@ -10,6 +10,9 @@
             <trans-unit id="view.button.find">
                 <target>Finden</target>
             </trans-unit>
+            <trans-unit id="view.form.showDeleted">
+                <target>Gelöschte Elemente anzeigen</target>
+            </trans-unit>
             
             <trans-unit id="view.header.name">
                 <target>Extension Usage Finder</target>
@@ -26,6 +29,57 @@
             </trans-unit>
             <trans-unit id="view.finder.index.tabs.extensionInfo">
                 <target>Extension-Info</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.usage.tableHead.uid">
+                <target>UID</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.usage.tableHead.page">
+                <target>Seite</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.usage.tableHead.list_type">
+                <target>list_type</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.usage.tableHead.colPos">
+                <target>colPos</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.usage.tableHead.elementDeleted">
+                <target>Element gelöscht</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.usage.tableHead.pageDeleted">
+                <target>Seite gelöscht</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.linkTitle.viewPage">
+                <target>Seite anzeigen</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.extensionInfo.title">
+                <target>Titel</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.extensionInfo.description">
+                <target>Beschreibung</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.extensionInfo.category">
+                <target>Kategorie</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.extensionInfo.author">
+                <target>Autor</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.extensionInfo.author.email">
+                <target>Autor E-Mail</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.extensionInfo.version">
+                <target>Version</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.extensionInfo.constraints">
+                <target>Beschränkungen</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.extensionInfo.constraints.depends">
+                <target>Abhänigkeiten</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.extensionInfo.constraints.conflicts">
+                <target>Konflikte</target>
+            </trans-unit>
+            <trans-unit id="view.finder.index.extensionInfo.constraints.suggests">
+                <target>Vorschläge</target>
             </trans-unit>
         </body>
     </file>

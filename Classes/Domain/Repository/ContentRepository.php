@@ -18,15 +18,19 @@ class ContentRepository
      * Find tt_content entries by list_type
      * 
      * @param string $type
+     * @param boolean $deleted
      * @return mixed
      */
-    public function findByListType($type)
+    public function findByListType($type, $deleted = false)
     {
         $select        = 'tt_content.uid contentUid, pages.uid AS pagesUid, '
             .'pages.title AS pageTitle , list_type, colPos, pages.deleted AS pagesDeleted, '
             .'tt_content.deleted AS contentDeleted';
         $table         = 'tt_content LEFT JOIN pages ON tt_content.pid = pages.uid';
         $where         = 'list_type LIKE "%'.str_replace('_', '', $type).'%"';
+
+        $where .= (true == $deleted) ? ' AND tt_content.deleted IN (0,1)' : ' AND tt_content.deleted = 0' ;
+
         $groupBy       = '';
         $orderBy       = '';
         $limit         = '';
