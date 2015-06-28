@@ -9,21 +9,21 @@
 - Todo
 
 ## What does it do?
-This extension is a backend modul.
+This extension is a backend modul for searching usages of extensions.
 
 ## Dependencies
 TYPO3 6.2
+Extbase 6.2,
+Fluid 6.2
 
 ## User manual
 
 ### Installation
+Just install the extension from the TER with the extension manager.
 
 ### How to use
+Click on the *Extension Usage Finder* unter *Admin-Tools* and start searching for usages of an extension.
 
 
 ## Todo
-- Improve search with LIKE
-- tt_content.uid in result list
-- Table filter
-- Dependencies to third party extensions
-- Message for no matches found
+- Solve jQuery-Prototype.js-Bug
