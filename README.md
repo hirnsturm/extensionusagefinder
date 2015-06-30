@@ -14,9 +14,9 @@ This extension offers a backend module that helps you to find the usage of an
 extension in your TYPO3 project.
 
 ## Dependencies
-TYPO3 6.2.0-6.2.99
-Extbase 6.2.0-6.2.99
-Fluid 6.2.0-6.2.99
+TYPO3 6.2.0-6.2.99  
+Extbase 6.2.0-6.2.99  
+Fluid 6.2.0-6.2.99  
 
 ## User manual
 
