@@ -32,7 +32,7 @@ namespace Sle\Extensionusagefinder\Domain\Model;
  *
  * @entity
  */
-class FinderQuery extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class FinderQuery extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject
 {
     /**
      * extensionKey
