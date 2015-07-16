@@ -14,9 +14,9 @@ This extension offers a backend module that helps you to find the usage of an
 extension in your TYPO3 project.
 
 ## Dependencies
-TYPO3 6.2.0-6.2.99  
-Extbase 6.2.0-6.2.99  
-Fluid 6.2.0-6.2.99  
+TYPO3 6.2.0-7.3.99  
+Extbase 6.2.0-7.3.99  
+Fluid 6.2.0-7.3.99  
 
 ## User manual
 
@@ -27,6 +27,6 @@ Just install the extension from the TER with the extension manager.
 Click on the *Extension Usage Finder* unter *Admin-Tools* and start searching for usages of an extension.
 
 ## Known problems
-- jQuery-Prototype.js-Bug with bootstrap-tabs
+- jQuery-Prototype.js-Bug with bootstrap-tabs in TYPO3 6.2.x
 
 ## Todo
