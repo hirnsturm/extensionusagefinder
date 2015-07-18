@@ -6,6 +6,7 @@
 - User Manual
   - Installation
   - How to Use
+  - Supported Languages
 - Known Problems
 - Todo
 
@@ -26,6 +27,10 @@ Just install the extension from the TER with the extension manager.
 
 ### How to Use
 Click on the *Extension Usage Finder* unter *Admin-Tools* and start searching for usages of an extension.
+
+### Supported Languages
+- English
+- Deutsch
 
 ## Known Problems
 - jQuery-Prototype.js-Bug with bootstrap-tabs in TYPO3 6.2.x
