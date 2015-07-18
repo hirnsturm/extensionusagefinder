@@ -20,13 +20,12 @@ Extbase 6.2.0-7.3.99
 Fluid 6.2.0-7.3.99  
 
 ## User Manual
-It's simple a backend module which you can find under *Admin Tools*. So, just install it and enjoy.
 
 ### Installation
 Just install the extension from the TER with the extension manager.
 
 ### How to Use
-Click on the *Extension Usage Finder* unter *Admin-Tools* and start searching for usages of an extension.
+Click on the *Extension Usage Finder* under *Admin-Tools* and start searching for usages of an extension.
 
 ### Supported Languages
 - English
