@@ -3,10 +3,10 @@
 ## Table of contents
 - What does it do?
 - Dependencies
-- User manual
+- User Manual
   - Installation
-  - How to use
-- Known problems
+  - How to Use
+- Known Problems
 - Todo
 
 ## What does it do?
@@ -18,15 +18,18 @@ TYPO3 6.2.0-7.3.99
 Extbase 6.2.0-7.3.99  
 Fluid 6.2.0-7.3.99  
 
-## User manual
+## User Manual
+It's simple a backend module which you can find under *Admin Tools*. So, just install it and enjoy.
 
 ### Installation
 Just install the extension from the TER with the extension manager.
 
-### How to use
+### How to Use
 Click on the *Extension Usage Finder* unter *Admin-Tools* and start searching for usages of an extension.
 
-## Known problems
+## Known Problems
 - jQuery-Prototype.js-Bug with bootstrap-tabs in TYPO3 6.2.x
 
 ## Todo
+- Filter by extensions plugins
+- Maybe your issue
