@@ -77,7 +77,7 @@ class ArrayHelper
 
     /**
      * Transforms an array to an stdObject
-     * 
+     *
      * @param array $array
      * @return \stdClass
      */
@@ -103,10 +103,12 @@ class ArrayHelper
         $object = new \stdClass();
 
         foreach ($array as $key => $val) {
-            if (is_array($val)) {
-                $object->{$key} = $this->arrayAndSubArrays2Object((array) $val);
-            } else {
-                $object->{$key} = $val;
+            if (!empty($key)) {
+                if (is_array($val)) {
+                    $object->{$key} = $this->arrayAndSubArrays2Object((array)$val);
+                } else {
+                    $object->{$key} = $val;
+                }
             }
         }
 
