@@ -6,18 +6,18 @@
             <trans-unit id="tx_extensionusagefinder_domain_model_finder">
                 <target>Finder</target>
             </trans-unit>
-            
+
             <trans-unit id="view.button.find">
                 <target>Finden</target>
             </trans-unit>
             <trans-unit id="view.form.showDeleted">
                 <target>Gelöschte Elemente anzeigen</target>
             </trans-unit>
-            
+
             <trans-unit id="view.header.name">
-                <target>Extension Usage Finder</target>
+                <target>Extension Usage Finder by Steve Lenz</target>
             </trans-unit>
-            
+
             <trans-unit id="view.finder.index.matches">
                 <target>Treffer</target>
             </trans-unit>
