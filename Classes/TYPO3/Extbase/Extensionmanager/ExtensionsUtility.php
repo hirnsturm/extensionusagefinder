@@ -1,9 +1,9 @@
 <?php
 
-namespace Sle\TYPO3\Extbase\Extensionmanager;
+namespace Sle\Extensionusagefinder\TYPO3\Extbase\Extensionmanager;
 
 use \TYPO3\CMS\Core\Utility\GeneralUtility;
-use Sle\Helper\ArrayHelper;
+use Sle\Extensionusagefinder\ArrayHelper;
 
 /**
  * TYPO3 ExtensionsUtility

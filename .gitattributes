@@ -1,0 +1,9 @@
+# Folders
+Tests/ export-ignore
+hooks/ export-ignore
+
+# Files
+.gitattributes export-ignore
+.gitignore export-ignore
+docker-compose.yml export-ignore
+.env export-ignore

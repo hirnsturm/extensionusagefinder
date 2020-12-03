@@ -2,9 +2,9 @@
 
 namespace Sle\Extensionusagefinder\Controller;
 
-use Sle\TYPO3\Extbase\Backend\BackendActionController;
-use Sle\TYPO3\Extbase\Backend\BackendSession;
-use Sle\TYPO3\Extbase\Extensionmanager\ExtensionsUtility;
+use Sle\Extensionusagefinder\TYPO3\Extbase\Backend\BackendSession;
+use \TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use Sle\Extensionusagefinder\TYPO3\Extbase\Extensionmanager\ExtensionsUtility;
 use Sle\Extensionusagefinder\Domain\Model\FinderQuery;
 use Sle\Extensionusagefinder\Domain\Repository\ContentRepository;
 
@@ -34,18 +34,16 @@ use Sle\Extensionusagefinder\Domain\Repository\ContentRepository;
  * ************************************************************* */
 
 /**
- * FinderController
- *
- * @package TYPO3
- * @subpackage extensionusagefinder
+ * Class FinderController
+ * @package Sle\Extensionusagefinder\Controller
  * @author Steve Lenz <kontakt@steve-lenz.de>
  */
-class FinderController extends BackendActionController
+class FinderController extends ActionController
 {
     /**
      * The session
      * 
-     * @var \Sle\TYPO3\Extbase\Backend\BackendSession
+     * @var \Sle\Extensionusagefinder\TYPO3\Extbase\Backend\BackendSession
      */
     private $session = null;
 

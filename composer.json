@@ -1,0 +1,43 @@
+{
+  "name": "sle/extensionusagefinder",
+  "type": "typo3-cms-extension",
+  "description": "Backend module that helps to find extension usages in your TYPO3 project.",
+  "homepage": "https://github.com/hirnsturm/extensionusagefinder",
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "keywords": [
+    "TYPO3",
+    "extenison",
+    "finder"
+  ],
+  "support": {
+    "issues": "https://github.com/hirnsturm/extensionusagefinder/issues"
+  },
+  "require": {
+    "php": ">=7.0",
+    "typo3/cms": "7.6.*",
+    "typo3/cms-extbase": "7.6.*",
+    "typo3/cms-fluid": "7.6.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sle\\Extensionusagefinder\\": "Classes"
+    }
+  },
+  "replace": {
+    "typo3-ter/extensionusagefinder": "self.version"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "mkdir -p .Build/web/typo3conf/ext/",
+      "[ -L .Build/web/typo3conf/ext/extensionusagefinder ] || ln -snvf ../../../../. .Build/web/typo3conf/ext/extensionusagefinder"
+    ]
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/web"
+    }
+  }
+}

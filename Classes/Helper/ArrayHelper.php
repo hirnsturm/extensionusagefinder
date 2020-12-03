@@ -1,6 +1,6 @@
 <?php
 
-namespace Sle\Helper;
+namespace Sle\Extensionusagefinder;
 
 /**
  * ArrayHelper

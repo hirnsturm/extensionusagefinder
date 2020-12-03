@@ -1,6 +1,6 @@
 <?php
 
-namespace Sle\TYPO3\Extbase\Backend;
+namespace Sle\Extensionusagefinder\TYPO3\Extbase\Backend;
 
 /**
  * TYPO3 Backend Session
