@@ -16,9 +16,9 @@
   },
   "require": {
     "php": ">=7.0",
-    "typo3/cms": "7.6.*",
-    "typo3/cms-extbase": "7.6.*",
-    "typo3/cms-fluid": "7.6.*"
+    "typo3/cms": "8.7.*",
+    "typo3/cms-extbase": "8.7.*",
+    "typo3/cms-fluid": "8.7.*"
   },
   "autoload": {
     "psr-4": {
