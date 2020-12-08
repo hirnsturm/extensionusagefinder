@@ -1,22 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
 <f:form objectName="newFinder"
         object="{newFinder}"
         action="index"
-        controller="Finder" 
+        controller="Finder"
         class="form-inline">
     <div class="form-group">
-        <f:form.select options="{extensions}" 
-                       optionLabelField="key" 
-                       optionValueField="key" 
+        <f:form.select options="{extensions}"
+                       optionLabelField="key"
+                       optionValueField="key"
                        sortByOptionLabel="true"
-                       property="extensionKey" 
-                       class="form-control" />
+                       property="extensionKey"
+                       class="form-control"/>
     </div>
     <div class="checkbox-inline">
         <label>
-            <f:form.checkbox property="deleted" 
-                             value="1" /><f:translate key="view.form.showDeleted" />
+            <f:form.checkbox property="deleted"
+                             value="1"/>
+            <f:translate key="view.form.showDeleted"/>
         </label>
     </div>
-    <f:form.button type="submit" 
-                   class="form-control btn btn-primary" ><f:translate key="view.button.find" /></f:form.button>
+    <f:form.button type="submit"
+                   class="form-control btn btn-primary">
+        <f:translate key="view.button.find"/>
+    </f:form.button>
 </f:form>
+
+</html>

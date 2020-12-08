@@ -1,32 +1,18 @@
-<f:be.container
-    includeCssFiles="{0: '{f:uri.resource(path:\'vendor/twitter/bootstrap/3.3.4/css/bootstrap.min.css\')}',
-    1: '{f:uri.resource(path:\'vendor/twitter/bootstrap/3.3.4/css/bootstrap-theme.min.css\')}'}"
-    includeJsFiles="{0: '{f:uri.resource(path:\'vendor/twitter/bootstrap/3.3.4/js/bootstrap.min.js\')}'}"
-    loadJQuery="true">
-    <div class="typo3-fullDoc">
-        <div id="typo3-docheader">
-            <div id="typo3-docheader-row1">
-                <div class="buttonsleft">
-                    <span style="color:#FFF"></span>
-                </div>
-                <div class="buttonsright">
-                </div>
-            </div>
-            <div id="typo3-docheader-row2">
-                <div class="docheader-row2-left">
-                    <f:translate key="view.header.name"/>
-                </div>
-                <div class="docheader-row2-right">
-                    <f:be.pagePath/>
-                    <f:be.pageInfo/>
-                </div>
-            </div>
-        </div>
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+<f:flashMessages/>
 
-        <div id="typo3-docbody">
-            <div id="typo3-inner-docbody"  class="container-fluid">
-                <f:render section="Content" />
-            </div>
+<f:be.container>
+    <div class="module-docheader t3js-module-docheader" style="height: auto;">
+        <div class="module-docheader-bar module-docheader-bar-navigation t3js-module-docheader-bar t3js-module-docheader-bar-navigation">
+
         </div>
     </div>
+    <div id="module-body t3js-module-body" style="padding-top: 89px;padding-left: 24px;">
+        <f:render section="content"/>
+    </div>
 </f:be.container>
+
+
+</html>
