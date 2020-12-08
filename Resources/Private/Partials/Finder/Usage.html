@@ -48,9 +48,8 @@
                                 {entity.contentUid}
                             </td>
                             <td>
-                                <a href="/typo3/sysext/cms/layout/db_layout.php?id={entity.pagesUid}" 
-                                   target="content"
-                                   title="{f:translate(key: 'view.finder.index.linkTitle.viewPage')}">{entity.pageTitle}</a>
+                                <self:be.link route="web_layout"
+                                              parameters="{id: entity.pagesUid}">{entity.pageTitle}</self:be.link>
                             </td>
                             <td>{entity.list_type}</td>
                             <td>{entity.colPos}</td>
