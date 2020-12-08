@@ -6,8 +6,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.1.0] - 2020-12-08
+
+### Changed
+
+- [Task] Move from 'tools' into main module 'web'
+- [Task] Add new extension icon
+- [Task] Fix documentation
+
 ## [2.0.0] - 2020-12-08
 
+### Changed
 - [Task] Fix backend links
 - [Task] Improve templates
 - [Task] Update Changelog
@@ -15,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.5.0] - 2020-12-03
 
+### Changed
 - [Task] Update Readme
 - [Task] Make composer ready
 - [Remove] Deprecated documentation
