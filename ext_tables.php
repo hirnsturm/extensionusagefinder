@@ -11,7 +11,7 @@ call_user_func(
              */
             \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
                 'Sle.extensionusagefinder',
-                'tools',
+                'web',
                 'extensionfinder',
                 '',
                 [
