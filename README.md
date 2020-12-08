@@ -5,15 +5,15 @@ Backend module that helps to find extension usages in your TYPO3 project.
 ## Dependencies
 See composer.json 
 
-### Installation
+## Installation
 ````shell script
 $ composer require sle/extensionusagefinder
 ````
 
-### How to Use
+## Usage
 Click on the *Extension Usage Finder* under *Admin-Tools* and start searching for usages of an extension.
 
-### Supported Languages
+## Supported Languages
 - English
 - Deutsch
 
