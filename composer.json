@@ -16,7 +16,7 @@
   },
   "require": {
     "php": ">=7.0",
-    "typo3/cms": "9.5.*",
+    "typo3/cms-core": "9.5.*",
     "typo3/cms-extbase": "9.5.*",
     "typo3/cms-fluid": "9.5.*"
   },
