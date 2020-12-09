@@ -1,5 +1,4 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-      xmlns:self="http://typo3.org/ns/Sle/Extensionusagefinder/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
 <div class='container-fluid'>
@@ -48,8 +47,8 @@
                                 {entity.contentUid}
                             </td>
                             <td>
-                                <self:be.link route="web_layout"
-                                              parameters="{id: entity.pagesUid}">{entity.pageTitle}</self:be.link>
+                                <f:be.link route="web_layout"
+                                           parameters="{id: entity.pagesUid}">{entity.pageTitle}</f:be.link>
                             </td>
                             <td>{entity.list_type}</td>
                             <td>{entity.colPos}</td>
