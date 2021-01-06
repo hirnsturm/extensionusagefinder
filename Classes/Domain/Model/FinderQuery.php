@@ -27,18 +27,19 @@ namespace Sle\Extensionusagefinder\Domain\Model;
  *  This copyright notice MUST APPEAR in all copies of the script!
  * ************************************************************* */
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+
 /**
- * Finder
- *
- * @entity
+ * Class FinderQuery
+ * @package Sle\Extensionusagefinder\Domain\Model
  */
-class FinderQuery extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject
+class FinderQuery extends AbstractEntity
 {
+
     /**
      * extensionKey
      *
      * @var string
-     * @validate Text
      */
     protected $extensionKey;
 
@@ -46,7 +47,6 @@ class FinderQuery extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject
      * deleted
      *
      * @var string
-     * @validate Boolean
      */
     protected $deleted = true;
 
@@ -55,7 +55,7 @@ class FinderQuery extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject
      *
      * @return string $extensionKey
      */
-    public function getExtensionKey()
+    public function getExtensionKey(): string
     {
         return $this->extensionKey;
     }
@@ -66,7 +66,7 @@ class FinderQuery extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject
      * @param string $extensionKey
      * @return void
      */
-    public function setExtensionKey($extensionKey)
+    public function setExtensionKey(string $extensionKey)
     {
         $this->extensionKey = $extensionKey;
     }
@@ -76,7 +76,7 @@ class FinderQuery extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject
      *
      * @return boolean $deleted
      */
-    public function getDeleted()
+    public function getDeleted(): bool
     {
         return $this->deleted;
     }
@@ -87,7 +87,7 @@ class FinderQuery extends \TYPO3\CMS\Extbase\DomainObject\AbstractValueObject
      * @param boolean $deleted
      * @return void
      */
-    public function setDeleted($deleted)
+    public function setDeleted(bool $deleted)
     {
         $this->deleted = $deleted;
     }
