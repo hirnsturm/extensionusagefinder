@@ -53,8 +53,8 @@ call_user_func(
                     'endtime'   => 'endtime',
                 ],
                 'searchFields'             => '',
-                'dynamicConfigFile'        => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('extensionusagefinder') . 'Configuration/TCA/Finder.php',
-                'iconfile'                 => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('extensionusagefinder') . 'Resources/Public/Icons/tx_extensionusagefinder_domain_model_finder.gif',
+                'dynamicConfigFile'        => 'EXT:extensionusagefinder/Configuration/TCA/Finder.php',
+                'iconfile'                 => 'EXT:extensionusagefinder/Resources/Public/Icons/tx_extensionusagefinder_domain_model_finder.gif',
             ],
         ];
     }
