@@ -2,11 +2,14 @@
 
 namespace Sle\Extensionusagefinder\Controller;
 
+use Sle\Extensionusagefinder\Configuration;
 use Sle\Extensionusagefinder\TYPO3\Extbase\Backend\BackendSession;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use \TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use Sle\Extensionusagefinder\TYPO3\Extbase\Extensionmanager\ExtensionsUtility;
 use Sle\Extensionusagefinder\Domain\Model\FinderQuery;
-use Sle\Extensionusagefinder\Domain\Repository\ContentRepository;
+use Sle\Extensionusagefinder\Domain\Repository\TtContentRepository;
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 
 /* * *************************************************************
  *
@@ -40,53 +43,57 @@ use Sle\Extensionusagefinder\Domain\Repository\ContentRepository;
  */
 class FinderController extends ActionController
 {
+
+    const SESSION_KEY = 'FinderQuery';
+
     /**
-     * The session
-     * 
-     * @var \Sle\Extensionusagefinder\TYPO3\Extbase\Backend\BackendSession
+     * @var BackendSession
      */
     private $session = null;
 
     /**
-     * 
+     * Initialization
      */
     public function initializeAction()
     {
-        $this->session = new BackendSession('extensionusagefinder');
+        $this->session = GeneralUtility::makeInstance(BackendSession::class, Configuration::EXT_KEY);
     }
 
     /**
      * action index
      *
-     * @param \Sle\Extensionusagefinder\Domain\Model\FinderQuery $newFinder
-     * @dontvalidate
-     * @return void
+     * @throws InvalidQueryException
      */
-    public function indexAction(FinderQuery $newFinder = null)
+    public function indexAction()
     {
-        $entities    = null;
-        $extUtility  = new ExtensionsUtility();
-        $contentRepo = new ContentRepository();
+        $newFinder = null;
+        /** @var ExtensionsUtility $extUtility */
+        $extUtility = GeneralUtility::makeInstance(ExtensionsUtility::class);
+        /** @var TtContentRepository $ttContentRepo */
+        $ttContentRepo = $this->objectManager->get(TtContentRepository::class);
 
         if (null === $newFinder) {
-            $newFinder = ($this->session->has('FinderQuery')) ? $this->session->get('FinderQuery')
-                    : new FinderQuery();
+            /** @var FinderQuery $newFinder */
+            $newFinder = ($this->session->has(self::SESSION_KEY))
+                ? $this->session->get(self::SESSION_KEY)
+                : GeneralUtility::makeInstance(FinderQuery::class);
         }
 
-        if (null !== $newFinder->getExtensionKey()) {
-            $entities = $contentRepo->findByListType($newFinder->getExtensionKey(), $newFinder->getDeleted());
-        }
+        /**
+         * @todo remove
+         */
+        $newFinder->setExtensionKey('xm_tools');
 
-        $this->session->set('FinderQuery', $newFinder);
-
-        $this->view
-            ->assign('extensions', $extUtility->getAllExtensions(true))
-            ->assign('extInfo',
-                $extUtility->getExtensionInfo($newFinder->getExtensionKey()))
-            ->assign('extDependencies',
-                $extUtility->getDependencies($newFinder->getExtensionKey()))
-            ->assign('newFinder', $newFinder)
-            ->assign('entities', $entities);
+        $this->session->set(self::SESSION_KEY, $newFinder);
+        $this->view->assignMultiple([
+            'extensions'      => $extUtility->getAllExtensions(true),
+            'extInfo'         => $extUtility->getExtensionInfo($newFinder->getExtensionKey()),
+            'extDependencies' => $extUtility->getDependencies($newFinder->getExtensionKey()),
+            'newFinder'       => $newFinder,
+            'entities'        => (null !== $newFinder->getExtensionKey())
+                ? $ttContentRepo->findByListType($newFinder)
+                : null,
+        ]);
     }
 
 }

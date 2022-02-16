@@ -15,7 +15,7 @@
     "issues": "https://github.com/hirnsturm/extensionusagefinder/issues"
   },
   "require": {
-    "php": ">=7.0",
+    "php": ">=7.2",
     "typo3/cms-core": "9.5.*",
     "typo3/cms-extbase": "9.5.*",
     "typo3/cms-fluid": "9.5.*"

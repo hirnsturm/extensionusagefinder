@@ -76,7 +76,7 @@ class FinderQuery extends AbstractEntity
      *
      * @return boolean $deleted
      */
-    public function getDeleted(): bool
+    public function isDeleted(): bool
     {
         return $this->deleted;
     }

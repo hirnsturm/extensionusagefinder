@@ -3,7 +3,9 @@
 namespace Sle\Extensionusagefinder\TYPO3\Extbase\Extensionmanager;
 
 use \TYPO3\CMS\Core\Utility\GeneralUtility;
-use Sle\Extensionusagefinder\ArrayHelper;
+use Sle\Extensionusagefinder\Helper\ArrayHelper;
+use TYPO3\CMS\Extbase\Object\ObjectManager;
+use TYPO3\CMS\Extensionmanager\Utility\ListUtility;
 
 /**
  * TYPO3 ExtensionsUtility
@@ -34,8 +36,8 @@ class ExtensionsUtility
      */
     public function __construct()
     {
-        $extbaseObjectManager = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Object\\ObjectManager');
-        $listUtility          = $extbaseObjectManager->get('TYPO3\\CMS\\Extensionmanager\\Utility\\ListUtility');
+        $extbaseObjectManager = GeneralUtility::makeInstance(ObjectManager::class);
+        $listUtility          = $extbaseObjectManager->get(ListUtility::class);
 
         $this->extensions = $listUtility->getAvailableAndInstalledExtensionsWithAdditionalInformation();
         $this->transformToObjects();

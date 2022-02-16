@@ -10,3 +10,18 @@ module.tx_extensionusagefinder {
 		layoutRootPath = {$module.tx_extensionusagefinder.view.layoutRootPath}
 	}
 }
+
+ config.tx_extbase.persistence.classes {
+	 Sle\Extensionusagefinder\Domain\Model\TtContent {
+		 mapping {
+			 tableName = tt_content
+			 columns {
+				 uid.mapOnProperty = uid
+				 pid.mapOnProperty = pid
+				 list_type.mapOnProperty = listType
+				 deleted.mapOnProperty = deleted
+				 hidden.mapOnProperty = hidden
+			 }
+		 }
+	 }
+ }

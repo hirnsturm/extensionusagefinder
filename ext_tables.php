@@ -1,9 +1,9 @@
 <?php
 
-defined('TYPO3_MODE') || die('Access denied.');
+defined('TYPO3') || die();
 
-call_user_func(
-    function () {
+(static function() {
+
         if (TYPO3_MODE === 'BE') {
 
             /**
@@ -24,11 +24,6 @@ call_user_func(
                 ]
             );
         }
-
-        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-            'extensionusagefinder',
-            'Configuration/TypoScript', 'Extension Usage Finder'
-        );
 
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_extensionusagefinder_domain_model_finder',
             'EXT:extensionusagefinder/Resources/Private/Language/locallang_csh_tx_extensionusagefinder_domain_model_finder.xlf');
@@ -57,5 +52,4 @@ call_user_func(
                 'iconfile'                 => 'EXT:extensionusagefinder/Resources/Public/Icons/tx_extensionusagefinder_domain_model_finder.gif',
             ],
         ];
-    }
-);
+})();

@@ -1,6 +1,6 @@
 <?php
 
-namespace Sle\Extensionusagefinder;
+namespace Sle\Extensionusagefinder\Helper;
 
 /**
  * ArrayHelper
@@ -21,7 +21,7 @@ class ArrayHelper
      * Set array
      *
      * @param array $array
-     * @return \xima\Helpers\ArrayHelper
+     * @return $this
      */
     public function setArray(array $array)
     {

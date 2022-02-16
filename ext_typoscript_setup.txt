@@ -1,0 +1,10 @@
+# ==============================================
+# Persistence object mapping configuration
+# ==============================================
+config.tx_extbase.persistence.classes {
+    Xima\Extensionusagefinder\Domain\Model\TtContent {
+        mapping {
+            tableName = tt_content
+        }
+    }
+}
